@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>✨ Cute Unit 6 Lesson Studio ✨</title>
+    <style>
+        /* Giao diện màu Pastel ngọt ngào, dễ thương */
+        body {
+            font-family: 'Comic Sans MS', 'Chalkboard SE', 'Segoe UI', sans-serif;
+            background-color: #fcf4f0; /* Màu kem cam đào nhạt */
+            color: #4a4a4a;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 30px 20px;
+            margin: 0;
+        }
+
+        /* Khung tài liệu mô phỏng file Word nhưng cute hơn */
+        .word-document {
+            max-width: 700px;
+            width: 100%;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 24px;
+            box-shadow: 0 10px 30px rgba(255, 182, 193, 0.3);
+            border: 4px solid #ffccd5; /* Viền hồng pastel */
+            box-sizing: border-box;
+        }
+
+        /* Thanh Audio cố định ở góc dưới màn hình để tiện bấm nghe */
+        .audio-player-box {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 600px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 15px 20px;
+            border-radius: 40px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            border: 2px solid #ffb3ba;
+            z-index: 1000;
+            text-align: center;
+        }
+
+        .audio-player-box p {
+            margin: 0 0 8px 0;
+            font-size: 0.9rem;
+            color: #6c757d;
+            font-style: italic;
+        }
+
+        audio {
+            width: 100%;
+            border-radius: 30px;
+        }
+
+        /* Tiêu đề lớn */
+        h1 {
+            color: #ff8b94;
+            font-size: 2.2rem;
+            text-align: center;
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #b5838d;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        /* Các tiêu đề mục: VOCABULARY, GRAMMAR */
+        h2 {
+            color: #ffaaa5;
+            border-bottom: 3px dashed #ffd1dc;
+            padding-bottom: 5px;
+            margin-top: 40px;
+            font-size: 1.5rem;
+            letter-spacing: 1px;
+        }
+
+        /* Bố cục đoạn hội thoại */
+        .conversation-box {
+            background: #fff9f6;
+            padding: 20px;
+            border-radius: 16px;
+            border: 2px dashed #ffdac1;
+            line-height: 2.3;
+            font-size: 1.25rem;
+        }
+
+        .line {
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        .speaker {
+            font-weight: bold;
+            color: #b5838d;
+            margin-right: 8px;
+        }
+
+        /* Hiệu ứng Karaoke từng từ siêu cute */
+        .word {
+            display: inline-block;
+            margin-right: 4px;
+            color: #4a4a4a; /* Giữ màu chữ gốc rõ ràng */
+            transition: all 0.15s ease-in-out;
+        }
+
+        /* ĐỌC ĐẾN ĐÂU: IN ĐẬM ĐẬM + PHÓNG TO + ĐỔI MÀU HỒNG DÂU */
+        .word.highlight {
+            color: #ff6b6b;
+            font-weight: 900; /* Siêu in đậm */
+            transform: scale(1.18) translateY(-2px); /* Phóng to nảy lên */
+            text-shadow: 1px 1px 0px #fff, 2px 2px 5px #ffccd5;
+        }
+
+        /* Từ đã đọc qua: chuyển sang màu hồng tro nhẹ nhàng */
+        .word.read {
+            color: #e5989b;
+            font-weight: bold;
+        }
+
+        /* Danh sách từ vựng */
+        .vocab-list {
+            list-style: none;
+            padding: 0;
+            font-size: 1.15rem;
+            line-height: 2;
+        }
+
+        .vocab-list li {
+            padding: 8px 12px;
+            background: #f9f0ff; /* Màu tím pastel nhạt */
+            margin-bottom: 8px;
+            border-radius: 10px;
+            border-left: 5px solid #d8b4f8;
+        }
+
+        .vocab-list strong {
+            color: #6d6875;
+        }
+
+        .decorations { font-size: 1.8rem; text-align: center; margin-bottom: 10px; }
+        .space-bottom { height: 120px; } /* Khoảng trống để không bị thanh audio che mất chữ */
+    </style>
+</head>
+<body>
+
+<div class="word-document">
+    <div class="decorations">🦄 🌸 🧸 ✨ 🧸 🌸 🦄</div>
+    
+    <h1>Artificial intelligence (AI)</h1>
+    <div class="subtitle">(Unit 6 – Global Success 12)</div>
+
+    <div class="conversation-box" id="conversation"></div>
+
+    <h2>VOCABULARY</h2>
+    <ul class="vocab-list">
+        <li>✨ <strong>Artificial intelligence (AI) :</strong> ........................................</li>
+        <li>✨ <strong>Facial recognition :</strong> ........................................</li>
+        <li>✨ <strong>Chatbot :</strong> ........................................</li>
+        <li>✨ <strong>Virtual reality (VR) :</strong> ........................................</li>
+        <li>✨ <strong>Activate :</strong> ........................................</li>
+        <li>✨ <strong>Smart app :</strong> ........................................</li>
+        <li>✨ <strong>Platform :</strong> ........................................</li>
+        <li>✨ <strong>Technician :</strong> ........................................</li>
+    </ul>
+
+    <h2>GRAMMAR</h2>
+    <p style="font-size: 1.15rem; color: #a9a9a9; font-style: italic;">(Nội dung ngữ pháp đang cập nhật... 📋)</p>
+
+    <div class="space-bottom"></div>
+</div>
+
+<div class="audio-player-box">
+    <p>⭐️ Bấm nút Play để bắt đầu luyện đọc bài nghe nhaaa! ⚡️</p>
+    <audio id="audio" controls>
+        <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+    </audio>
+</div>
+
+<script>
+    // Dữ liệu hội thoại gốc từ file Word của bạn
+    const scriptData = [
+        { speaker: "Jack:", text: "Hey, have you thought about our presentation for Unit 6 on artificial intelligence yet?" },
+        { speaker: "Anna:", text: "Oh, hi. I’m actually reading about it now. AI is changing everything! By the way, can you help me with my phone? I want to activate the facial recognition feature but I don't know how." },
+        { speaker: "Jack:", text: "Sure, give it to me. I will get this smart app to set it up for you in a second. ... There you go!" },
+        { speaker: "Anna:", text: "Wow, that was fast. Thanks! Speaking of our presentation, I think we should talk about how school platforms use chatbot tools to answer students' questions instantly." },
+        { speaker: "Jack:", text: "Great idea! And to make our presentation more exciting, we should have the teacher try a virtual reality headset on stage. What do you think?" },
+        { speaker: "Anna:", text: "That sounds amazing! But wait, our school headset is currently broken. Don't worry, my dad knows a technician. He will have the headset repaired by tomorrow." },
+        { speaker: "Jack:", text: "Perfect! So we will get our presentation slides completed tonight, and then we are ready for the class." },
+        { speaker: "Anna:", text: "Exactly! Let’s do our best." }
+    ];
+
+    const conversationContainer = document.getElementById('conversation');
+    const audio = document.getElementById('audio');
+    
+    let totalWordsCount = 0;
+    let wordElementsTimeline = [];
+
+    // Tạo cấu trúc chữ y hệt đoạn chat
+    function initWordDocument() {
+        let htmlOutput = "";
+        let globalWordIndex = 0;
+
+        scriptData.forEach((line) => {
+            htmlOutput += `<span class="line"><span class="speaker">${line.speaker}</span>`;
+            const words = line.text.split(/\s+/);
+            
+            words.forEach((word) => {
+                htmlOutput += `<span class="word" id="w-${globalWordIndex}">${word}</span> `;
+                wordElementsTimeline.push({ id: `w-${globalWordIndex}` });
+                globalWordIndex++;
+            });
+            htmlOutput += `</span>`;
+        });
+        
+        conversationContainer.innerHTML = htmlOutput;
+        totalWordsCount = globalWordIndex;
+    }
+
+    // Lắng nghe audio để bôi đậm chữ dựa theo tiến độ % của bài nghe
+    audio.addEventListener('timeupdate', () => {
+        if (!audio.duration) return;
+        
+        const progressPercent = audio.currentTime / audio.duration;
+        const currentActiveIndex = Math.floor(progressPercent * totalWordsCount);
+
+        wordElementsTimeline.forEach((item, index) => {
+            const el = document.getElementById(item.id);
+            if (el) {
+                if (index === currentActiveIndex) {
+                    el.classList.add('highlight');
+                    el.classList.remove('read');
+                } else if (index < currentActiveIndex) {
+                    el.classList.remove('highlight');
+                    el.classList.add('read');
+                } else {
+                    el.classList.remove('highlight', 'read');
+                }
+            }
+        });
+    });
+
+    // Khởi động
+    initWordDocument();
+</script>
+
+</body>
+</html>
